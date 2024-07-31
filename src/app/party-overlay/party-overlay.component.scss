@@ -1,0 +1,25 @@
+.player {
+  position: fixed;
+  z-index: 2;
+  bottom: 2vh;
+  left: 5vw;
+  background-image: url("../../assets/bg.png");
+  width: 16vw;
+  height: 20vh;
+  padding: 2vw;
+  background-repeat: no-repeat;
+  background-size: 20vw 24vh;
+
+  &.one{
+    left: 5vw;
+  }
+  &.two{
+    left: 25vw;
+  }
+  &.three{
+    left: 45vw;
+  }
+  &.four{
+    left: 65vw;
+  }
+}
