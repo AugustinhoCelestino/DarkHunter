@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0px;
+}
+
+@font-face {
+  font-family: "FontDefault";
+  src: url("assets/font/pixel_2.ttf");
+}
+
+* {
+  font-family: "FontDefault";
+  font-size: 12px;
+  color: white;
+}
+
+.fs-small {
+  font-size: 20px;
+}
+.fs-midium {
+  font-size: 26px;
+}
+.fs-big {
+  font-size: 40px;
+}
+.fc-white {
+  color: white;
+}

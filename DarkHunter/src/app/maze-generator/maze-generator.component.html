@@ -1,0 +1,66 @@
+<div class="maze">
+  <div
+    class="maze-map"
+    [style.top]="generateTopSCSS()"
+    [style.left]="generateLeftSCSS()"
+  >
+    @for (maze_line of maze; track maze_line; let index_line = $index) {
+    <div class="square-line">
+      @for (maze_cell of maze_line; track maze_cell; let index_cell = $index) {
+      <div
+        class="square"
+        [ngClass]="{
+          visited: maze[index_line][index_cell].visited,
+          'border-top': maze[index_line][index_cell].border_top,
+          'border-right': maze[index_line][index_cell].border_right,
+          'border-bottom': maze[index_line][index_cell].border_bottom,
+          'border-left': maze[index_line][index_cell].border_left,
+          'dead-end': maze[index_line][index_cell].dead_end
+        }"
+      >
+        @if (checkStartCell(index_line+1, index_cell+1)){
+        <img class="bonfire" src="../../assets/bonfire.gif" />
+        } @if (maze_cell.treasure){
+        <img class="chest" src="../../assets/chestw.webp" />
+        } @if (maze_cell.monster){
+        <img class="monster" src="../../assets/skul.gif" />
+        }
+
+        <!-- <br />
+        {{ maze_cell.queue_size }}
+        <br />
+        {{ maze_cell.monster_chance }}%
+        <br />
+        {{ maze[index_line][index_cell].x }},
+        {{ maze[index_line][index_cell].y }} -->
+
+        <br />
+        <br />
+        @if (maze_cell.maze_end){
+        <div>
+          <img class="boss" src="../../assets/boss.gif" />
+        </div>
+        } @if (checkMovimentPlayerCell(index_line+1, index_cell+1)){
+        <div (click)="setPlayerTile(maze_cell)" class="steps">
+          @if(!maze_cell.monster && !maze_cell.maze_end ){
+          <img class="walk" src="../../assets/walk.gif" />
+          } @if(maze_cell.fae_route){
+          <img class="fae" src="../../assets/fae.gif" />
+          } @if(maze_cell.monster || maze_cell.maze_end ){
+          <img class="swords-01" src="../../assets/sword.gif" />
+          <img class="swords-02" src="../../assets/sword.gif" />
+          }
+        </div>
+        }
+      </div>
+
+      }
+    </div>
+    }
+  </div>
+</div>
+<!-- <div style="position: absolute; color: white; top: 50%">
+  Treasures: {{ this.treasures_count }}
+  <br />
+  Monsters: {{ this.maze_monster_count }}
+</div> -->

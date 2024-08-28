@@ -1,0 +1,50 @@
+.overlay {
+  border-color: rgba(0, 0, 0, 0.5);
+  border-style: solid;
+  border-top-width: 100vh;
+  border-left-width: 100vh;
+  border-right-width: 100vh;
+  border-bottom-width: 100vh;
+
+  position: absolute;
+
+  width: 80vh;
+  height: 80vh;
+  z-index: 99;
+  border-radius: 50%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  overflow: hidden;
+
+  .player{
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vh;
+  }
+
+
+  // animation-name: torch;
+  // animation-duration: 1s;
+  // animation-iteration-count: infinite;
+
+  // @keyframes torch {
+  //   0% {
+  //     width: 40vh;
+  //     height: 40vh;
+  //   }
+  //   50% {
+  //     width: 41vh;
+  //     height: 41vh;
+  //   }
+  //   100% {
+  //     width: 40vh;
+  //     height: 40vh;
+  //   }
+  // }
+}
